@@ -1,11 +1,11 @@
 ---
 # defaults file for ansible-git
-git_mail: "info@niklas-steffen.de"
-git_name: "MayNiklas"
+git_mail: info@niklas-steffen.de
+git_name: MayNiklas
 
 git_ignore:
-- "### macOS ###"
-- "# General"
-- ".DS_Store"
-- ".AppleDouble"
-- ".LSOverride"
+  - "### macOS ###"
+  - "# General"
+  - .DS_Store
+  - .AppleDouble
+  - .LSOverride
