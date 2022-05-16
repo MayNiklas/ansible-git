@@ -18,7 +18,7 @@
     scope: global
     value: "{{ ansible_env.HOME }}/.gitignore"
 
-- name: "Add elements tools {{ ansible_env.HOME }}/.gitignore"
+- name: "Add elements to {{ ansible_env.HOME }}/.gitignore"
   lineinfile:
     path: "{{ ansible_env.HOME }}/.gitignore"
     line: "{{ item.name|default(item) }}"
