@@ -11,3 +11,17 @@
     name: user.name
     scope: global
     value: "{{ git_name }}"
+
+- name: "git config - {{ ansible_env.HOME }}/.gitignore"
+  git_config:
+    name: core.excludesFile
+    scope: global
+    value: "{{ ansible_env.HOME }}/.gitignore"
+
+- name: "Add elements tools {{ ansible_env.HOME }}/.gitignore"
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.gitignore"
+    line: "{{ item.name|default(item) }}"
+    create: yes
+  loop: "{{ git_ignore }}"
+  when: git_ignore|default([])|count > 0
